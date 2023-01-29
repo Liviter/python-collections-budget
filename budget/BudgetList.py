@@ -21,6 +21,11 @@ class BudgetList():
     def __len__(self):
         return len(self.expenses + self.overages)
 
+    def __iter__(self):
+        iter = iter(self.expenses)
+        self.iter_o = iter(self.overages)
+
+
 def main():
     myBudgetList = BudgetList(1200)
     expenses = Expense.Expenses()
@@ -33,3 +38,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
